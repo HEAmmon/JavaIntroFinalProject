@@ -24,9 +24,25 @@ public class StudentService
         return null;
     }
 
+    public Map<String, Student> getStudents() {
+        return students;
+    }
+
     public void showSummary()
     {
         //TODO implement
+       System.out.println( "Student Name:" );
+        for ( String key : students.keySet() )
+        {
+            Student student = students.get( key );
+            System.out.println(student);
+        }
+        System.out.println( "Course(s) Student is Enrolled in: " );
+        for ( String key : students.keySet() )
+        {
+            Student student = students.get( key );
+            System.out.println(student.getCourses());
+        }
     }
 
     public void enrollToCourse( String studentId, Course course )
